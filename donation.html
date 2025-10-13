@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Now - Eco Yuva Foundation</title>
+    <meta
+      name="description"
+      content="Make a secure donation to Eco Yuva Foundation. Choose from multiple payment methods and see your impact in real-time."
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- QR Code Scanner Library -->
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: #0f172a;
+        background-color: #f8fafc;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      .header {
+        background: linear-gradient(
+          90deg,
+          #0f172a 0%,
+          #1e293b 70%,
+          #10b981 100%
+        );
+        color: white;
+        padding: 16px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+      }
+
+      .back-btn {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        padding: 8px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 70%,
+          #10b981 100%
+        );
+        color: white;
+        padding: 80px 0 60px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        color: #cbd5e1;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Impact Stats */
+      .impact-stats {
+        background: white;
+        padding: 60px 0;
+        margin-top: -30px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .stats-container {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        margin: 0 20px;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 32px;
+        text-align: center;
+      }
+
+      .stat-item h3 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #10b981;
+        margin-bottom: 8px;
+      }
+
+      .stat-item p {
+        color: #64748b;
+        font-size: 16px;
+      }
+
+      /* Main Content */
+      .main-content {
+        padding: 80px 0;
+      }
+
+      .donation-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+
+      /* Donation Form */
+      .donation-form {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        position: sticky;
+        top: 100px;
+      }
+
+      .form-header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .form-header h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 8px;
+      }
+
+      .form-header p {
+        color: #64748b;
+      }
+
+      /* Amount Selection */
+      .amount-section {
+        margin-bottom: 32px;
+      }
+
+      .section-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 16px;
+      }
+
+      .amount-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .amount-btn {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        padding: 16px;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+
+      .amount-btn:hover,
+      .amount-btn.active {
+        background: #10b981;
+        color: white;
+        border-color: #10b981;
+      }
+
+      .custom-amount {
+        width: 100%;
+        padding: 16px;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+      }
+
+      .custom-amount:focus {
+        outline: none;
+        border-color: #10b981;
+      }
+
+      /* Donation Type */
+      .donation-type {
+        margin-bottom: 32px;
+      }
+
+      .type-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .type-btn {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        padding: 16px;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+
+      .type-btn:hover,
+      .type-btn.active {
+        background: #10b981;
+        color: white;
+        border-color: #10b981;
+      }
+
+      /* Payment Methods */
+      .payment-methods {
+        margin-bottom: 32px;
+      }
+
+      .payment-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .payment-btn {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        padding: 16px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 500;
+      }
+
+      .payment-btn:hover,
+      .payment-btn.active {
+        background: #10b981;
+        color: white;
+        border-color: #10b981;
+      }
+
+      .payment-btn i {
+        font-size: 20px;
+      }
+
+      /* QR Scanner Section */
+      .qr-scanner {
+        background: #f8fafc;
+        border: 2px dashed #cbd5e1;
+        border-radius: 12px;
+        padding: 24px;
+        text-align: center;
+        margin-bottom: 24px;
+        display: none;
+      }
+
+      .qr-scanner.active {
+        display: block;
+      }
+
+      .scanner-container {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      #qr-reader {
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .scanner-controls {
+        margin-top: 16px;
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .scanner-btn {
+        background: #10b981;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background 0.3s ease;
+      }
+
+      .scanner-btn:hover {
+        background: #059669;
+      }
+
+      .scanner-btn.stop {
+        background: #ef4444;
+      }
+
+      .scanner-btn.stop:hover {
+        background: #dc2626;
+      }
+
+      /* Donor Information */
+      .donor-info {
+        margin-bottom: 32px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+
+      .form-group input,
+      .form-group select {
+        padding: 12px 16px;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: #10b981;
+      }
+
+      /* Anonymous Donation */
+      .anonymous-check {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+
+      .anonymous-check input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: #10b981;
+      }
+
+      /* Donate Button */
+      .donate-btn {
+        width: 100%;
+        background: #10b981;
+        color: white;
+        padding: 18px;
+        border: none;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-bottom: 16px;
+      }
+
+      .donate-btn:hover {
+        background: #059669;
+        transform: translateY(-2px);
+      }
+
+      .donate-btn:disabled {
+        background: #9ca3af;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .security-note {
+        text-align: center;
+        color: #64748b;
+        font-size: 14px;
+      }
+
+      .security-note i {
+        color: #10b981;
+        margin-right: 4px;
+      }
+
+      /* Contact Donation Section */
+      .contact-donation-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 0;
+        background: #f8fafc;
+      }
+
+      .contact-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        padding: 48px;
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+      }
+
+      .contact-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #10b981, #059669);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        color: white;
+        font-size: 32px;
+        box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3);
+      }
+
+      .contact-card h3 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 16px;
+      }
+
+      .contact-card p {
+        color: #64748b;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 32px;
+      }
+
+      .contact-donate-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        padding: 16px 32px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+      }
+
+      .contact-donate-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4);
+        background: linear-gradient(135deg, #059669, #047857);
+      }
+
+      .contact-donate-btn i:first-child {
+        font-size: 18px;
+      }
+
+      .contact-donate-btn i:last-child {
+        transition: transform 0.3s ease;
+      }
+
+      .contact-donate-btn:hover i:last-child {
+        transform: translateX(4px);
+      }
+
+      /* Impact Information */
+      .impact-info {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+      }
+
+      .impact-header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .impact-header h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 8px;
+      }
+
+      .impact-header p {
+        color: #64748b;
+      }
+
+      /* Impact Cards */
+      .impact-cards {
+        display: grid;
+        gap: 24px;
+        margin-bottom: 32px;
+      }
+
+      .impact-card {
+        background: #f8fafc;
+        border-radius: 16px;
+        padding: 24px;
+        border-left: 4px solid #10b981;
+      }
+
+      .impact-card h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 8px;
+      }
+
+      .impact-card p {
+        color: #64748b;
+        margin-bottom: 12px;
+      }
+
+      .impact-amount {
+        font-size: 18px;
+        font-weight: 700;
+        color: #10b981;
+      }
+
+      /* Recent Donations */
+      .recent-donations {
+        margin-bottom: 32px;
+      }
+
+      .donation-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        background: #f8fafc;
+        border-radius: 12px;
+        margin-bottom: 12px;
+      }
+
+      .donor-avatar {
+        width: 40px;
+        height: 40px;
+        background: #10b981;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 600;
+      }
+
+      .donation-details h4 {
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 2px;
+      }
+
+      .donation-details p {
+        color: #64748b;
+        font-size: 14px;
+      }
+
+      .donation-amount {
+        margin-left: auto;
+        font-weight: 700;
+        color: #10b981;
+      }
+
+      /* Trust Indicators */
+      .trust-indicators {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #64748b;
+        font-size: 14px;
+      }
+
+      .trust-item i {
+        color: #10b981;
+      }
+
+      /* Testimonials */
+      .testimonials {
+        background: #ecfdf5;
+        border-radius: 16px;
+        padding: 24px;
+      }
+
+      .testimonial {
+        text-align: center;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        color: #475569;
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+        color: #0f172a;
+      }
+
+      /* Footer */
+      .footer {
+        background: #0f172a;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .footer p {
+        color: #cbd5e1;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .donation-container {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .donation-form {
+          position: static;
+        }
+
+        .hero h1 {
+          font-size: 32px;
+        }
+
+        .amount-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .payment-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .trust-indicators {
+          grid-template-columns: 1fr;
+        }
+
+        .stats-container {
+          margin: 0 10px;
+          padding: 24px;
+        }
+
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+      }
+
+      /* Loading Animation */
+      .loading {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #fff;
+        animation: spin 1s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Success Message */
+      .success-message {
+        background: #ecfdf5;
+        border: 1px solid #10b981;
+        color: #065f46;
+        padding: 16px;
+        border-radius: 12px;
+        margin-bottom: 24px;
+        display: none;
+      }
+
+      .success-message.show {
+        display: block;
+      }
+
+      .success-message i {
+        color: #10b981;
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo">Eco Yuva Foundation</a>
+        <a href="index.html" class="back-btn">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+        <!-- BACKEND FUNCTIONALITY COMMENTED OUT FOR FRONTEND-ONLY BUILD -->
+        <!-- <a href="auth.html" id="loginBtn" class="back-btn">Login</a>
+            <button id="logoutBtn" class="back-btn" style="display:none;">Logout</button> -->
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Make a Donation</h1>
+        <p>
+          Your generosity creates lasting change. Every donation helps us
+          provide essential resources to families and communities in need.
+        </p>
+      </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="impact-stats">
+      <div class="container">
+        <div class="stats-container">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <h3>$4000</h3>
+              <p>Raised This Month</p>
+            </div>
+            <div class="stat-item">
+              <h3>2,450</h3>
+              <p>Active Donors</p>
+            </div>
+            <div class="stat-item">
+              <h3>15,000+</h3>
+              <p>Lives Impacted</p>
+            </div>
+            <div class="stat-item">
+              <h3>98%</h3>
+              <p>Goes to Programs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content">
+      <div class="container">
+        <div class="donation-container">
+          <!-- DONATION FORM COMMENTED OUT FOR FRONTEND-ONLY BUILD -->
+          <!--
+                <div class="donation-form">
+                    <div class="form-header">
+                        <h2>Complete Your Donation</h2>
+                        <p>Choose your donation amount and payment method</p>
+                    </div>
+
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i>
+                        Thank you for your generous donation! You will receive a confirmation email shortly.
+                    </div>
+
+                    <form id="donationForm">
+                        <div class="amount-section">
+                            <div class="section-title">Select Amount</div>
+                            <div class="amount-grid">
+                                <button type="button" class="amount-btn" data-amount="25">$25</button>
+                                <button type="button" class="amount-btn" data-amount="50">$50</button>
+                                <button type="button" class="amount-btn" data-amount="100">$100</button>
+                                <button type="button" class="amount-btn" data-amount="250">$250</button>
+                                <button type="button" class="amount-btn" data-amount="500">$500</button>
+                                <button type="button" class="amount-btn" data-amount="1000">$1000</button>
+                            </div>
+                            <input type="number" class="custom-amount" placeholder="Enter custom amount" id="customAmount" min="1">
+                        </div>
+
+                        <div class="donation-type">
+                            <div class="section-title">Donation Type</div>
+                            <div class="type-grid">
+                                <button type="button" class="type-btn active" data-type="one-time">One-time</button>
+                                <button type="button" class="type-btn" data-type="monthly">Monthly</button>
+                            </div>
+                        </div>
+
+                        <div class="payment-methods">
+                            <div class="section-title">Payment Method</div>
+                            <div class="payment-grid">
+                                <button type="button" class="payment-btn active" data-method="card">
+                                    <i class="fas fa-credit-card"></i>
+                                    Credit/Debit Card
+                                </button>
+                                <button type="button" class="payment-btn" data-method="paypal">
+                                    <i class="fab fa-paypal"></i>
+                                    PayPal
+                                </button>
+                                <button type="button" class="payment-btn" data-method="bank">
+                                    <i class="fas fa-university"></i>
+                                    Bank Transfer
+                                </button>
+                                <button type="button" class="payment-btn" data-method="qr">
+                                    <i class="fas fa-qrcode"></i>
+                                    QR Code Scanner
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="qr-scanner" id="qrScanner">
+                            <h3>Scan QR Code for Payment</h3>
+                            <p>Use your mobile banking app to scan the QR code below</p>
+                            <div class="scanner-container">
+                                <div id="qr-reader"></div>
+                                <div class="scanner-controls">
+                                    <button type="button" class="scanner-btn" id="startScanBtn">Start Scanner</button>
+                                    <button type="button" class="scanner-btn stop" id="stopScanBtn" style="display: none;">Stop Scanner</button>
+                                </div>
+                            </div>
+                            <p style="margin-top: 16px; font-size: 14px; color: #64748b;">
+                                <i class="fas fa-info-circle"></i>
+                                Point your camera at a QR code to scan payment information
+                            </p>
+                        </div>
+
+                        <div class="donor-info">
+                            <div class="section-title">Donor Information</div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <input type="text" placeholder="First Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Last Name" required>
+                                </div>
+                                <div class="form-group full-width">
+                                    <input type="email" placeholder="Email Address" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Phone Number">
+                                </div>
+                                <div class="form-group">
+                                    <select>
+                                        <option value="">Select Country</option>
+                                        <option value="US">United States</option>
+                                        <option value="PK">India</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="AU">Australia</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="anonymous-check">
+                                <input type="checkbox" id="anonymous">
+                                <label for="anonymous">Make this donation anonymous</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="donate-btn" id="donateBtn">
+                            Donate Now - $<span id="selectedAmount">25</span>
+                        </button>
+
+                        <div class="security-note">
+                            <i class="fas fa-shield-alt"></i>
+                            Your donation is secure and encrypted. We never store your payment information.
+                        </div>
+                    </form>
+                </div>
+                -->
+        </div>
+        <div class="contact-donation-section">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3>Ready to Make a Difference?</h3>
+            <p>
+              Contact our team to arrange your donation pickup. We make donating
+              easy and convenient for you.
+            </p>
+            <a href="index.html#contact" class="contact-donate-btn">
+              <i class="fas fa-phone"></i>
+              <span>Contact Us to Donate</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2024 Eco Yuva Foundation. All rights reserved. | Tax ID:
+          12-3456789
+        </p>
+      </div>
+    </footer>
+
+    <!-- Razorpay checkout script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+      let selectedAmount = 25;
+      let selectedType = "one-time";
+      let selectedMethod = "card";
+      let html5QrCode = null;
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // LOGIN/LOGOUT BUTTON LOGIC - BACKEND FUNCTIONALITY COMMENTED OUT FOR FRONTEND-ONLY BUILD
+        const loginBtn = document.getElementById("loginBtn");
+        const logoutBtn = document.getElementById("logoutBtn");
+
+        // BACKEND FUNCTIONALITY COMMENTED OUT FOR FRONTEND-ONLY BUILD
+        /*
+    const token = localStorage.getItem('token');
+    if (token) {
+        if (loginBtn) loginBtn.style.display = 'none';
+        if (logoutBtn) logoutBtn.style.display = 'inline-block';
+    } else {
+        if (loginBtn) loginBtn.style.display = 'inline-block';
+        if (logoutBtn) logoutBtn.style.display = 'none';
+    }
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function() {
+            localStorage.removeItem('token');
+            window.location.href = 'auth.html';
+        });
+    }
+
+    // PRIVATE ROUTE: ONLY LOGGED IN USERS CAN DONATE
+    if (!token) {
+        alert('You must be logged in to donate.');
+        window.location.href = 'auth.html';
+        return;
+    }
+    */
+
+        // ALL FORM FUNCTIONALITY COMMENTED OUT FOR FRONTEND-ONLY BUILD
+        /*
+    // AMOUNT SELECTION
+    document.querySelectorAll('.amount-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            selectedAmount = parseInt(this.dataset.amount);
+            document.getElementById('customAmount').value = '';
+            updateDonateButton();
+        });
+    });
+
+    // CUSTOM AMOUNT INPUT
+    document.getElementById('customAmount').addEventListener('input', function() {
+        if (this.value) {
+            document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+            selectedAmount = parseInt(this.value) || 0;
+            updateDonateButton();
+        }
+    });
+
+    // DONATION TYPE SELECTION
+    document.querySelectorAll('.type-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            selectedType = this.dataset.type;
+            updateDonateButton();
+        });
+    });
+
+    // PAYMENT METHOD SELECTION
+    document.querySelectorAll('.payment-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.payment-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            selectedMethod = this.dataset.method;
+            const qrScanner = document.getElementById('qrScanner');
+            if (selectedMethod === 'qr') {
+                qrScanner.classList.add('active');
+            } else {
+                qrScanner.classList.remove('active');
+                stopQrScanner();
+            }
+        });
+    });
+
+    // QR SCANNER CONTROLS
+    document.getElementById('startScanBtn').addEventListener('click', startQrScanner);
+    document.getElementById('stopScanBtn').addEventListener('click', stopQrScanner);
+    */
+
+        // DONATION FORM SUBMISSION - BACKEND FUNCTIONALITY COMMENTED OUT FOR FRONTEND-ONLY BUILD
+        document
+          .getElementById("donationForm")
+          .addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            // Get donor info
+            const donorInputs = this.querySelectorAll("input, select");
+            let donor = {};
+            donorInputs.forEach((input) => {
+              if (input.placeholder === "First Name")
+                donor.firstName = input.value;
+              if (input.placeholder === "Last Name")
+                donor.lastName = input.value;
+              if (input.placeholder === "Email Address")
+                donor.email = input.value;
+            });
+            const isAnonymous = document.getElementById("anonymous").checked;
+
+            if (
+              !donor.firstName ||
+              !donor.lastName ||
+              !donor.email ||
+              selectedAmount < 1
+            ) {
+              alert(
+                "Please fill in your information and enter a valid donation amount."
+              );
+              return;
+            }
+
+            // BACKEND FUNCTIONALITY COMMENTED OUT FOR FRONTEND-ONLY BUILD
+            /*
+        // 1. Create Razorpay order on backend
+        let orderData;
+        try {
+            const res = await fetch('http://localhost:5000/api/donations/create-order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                body: JSON.stringify({ amount: selectedAmount * 100 }) // Razorpay expects paise
+            });
+            orderData = await res.json();
+            if (!res.ok) throw new Error(orderData.message || 'Order creation failed');
+        } catch (err) {
+            alert('Unable to initiate payment: ' + err.message);
+            return;
+        }
+
+        // 2. Open Razorpay modal
+        const options = {
+            key: 'rzp_test_vsLHHCgamWA71m', // Use your Razorpay Key ID
+            amount: orderData.amount,
+            currency: orderData.currency,
+            name: 'Eco Yuva Foundation',
+            description: `Donation (${selectedType})`,
+            order_id: orderData.id,
+            handler: async function (response) {
+                // 3. On payment success, verify payment on backend
+                try {
+                    const verifyRes = await fetch('http://localhost:5000/api/donations/verify', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer ' + token
+                        },
+                        body: JSON.stringify({
+                            razorpay_payment_id: response.razorpay_payment_id,
+                            razorpay_order_id: response.razorpay_order_id,
+                            razorpay_signature: response.razorpay_signature,
+                            amount: orderData.amount,
+                            donationType: selectedType,
+                            paymentMethod: 'Razorpay',
+                            isAnonymous: isAnonymous
+                        })
+                    });
+                    const verifyData = await verifyRes.json();
+                    if (verifyRes.ok) {
+                        document.getElementById('successMessage').classList.add('show');
+                        alert('Thank you for your donation! Confirmation email sent.');
+                        setTimeout(() => {
+                            document.getElementById('successMessage').classList.remove('show');
+                        }, 5000);
+                        document.getElementById('donationForm').reset();
+                    } else {
+                        alert('Payment verification failed: ' + (verifyData.message || 'Unknown error'));
+                    }
+                } catch (err) {
+                    alert('Error verifying payment: ' + err.message);
+                }
+            },
+            prefill: {
+                name: donor.firstName + ' ' + donor.lastName,
+                email: donor.email
+            },
+            theme: {
+                color: "#10b981"
+            }
+        };
+        const rzp = new Razorpay(options);
+        rzp.open();
+        */
+          });
+
+        // ALL FUNCTIONALITY COMMENTED OUT FOR FRONTEND-ONLY BUILD
+        /*
+    // INITIALIZE DONATE BUTTON
+    updateDonateButton();
+
+    // RECENT DONATIONS SIMULATION
+    updateRecentDonations();
+    */
+      });
+
+      // ALL FUNCTIONS COMMENTED OUT FOR FRONTEND-ONLY BUILD
+      /*
+// Update donate button text
+function updateDonateButton() {
+    const amountSpan = document.getElementById('selectedAmount');
+    const donateBtn = document.getElementById('donateBtn');
+    amountSpan.textContent = selectedAmount;
+    if (selectedType === 'monthly') {
+        donateBtn.innerHTML = `Donate $${selectedAmount}/month`;
+    } else {
+        donateBtn.innerHTML = `Donate Now - $${selectedAmount}`;
+    }
+}
+*/
+
+      // QR Scanner functions (if you use QR)
+      function startQrScanner() {
+        const qrReaderElement = document.getElementById("qr-reader");
+        const startBtn = document.getElementById("startScanBtn");
+        const stopBtn = document.getElementById("stopScanBtn");
+        html5QrCode = new Html5Qrcode("qr-reader");
+        const config = {
+          fps: 10,
+          qrbox: { width: 250, height: 250 },
+          aspectRatio: 1.0,
+        };
+        html5QrCode
+          .start(
+            { facingMode: "environment" },
+            config,
+            (decodedText, decodedResult) => {
+              handleQrCodeScan(decodedText);
+              stopQrScanner();
+            },
+            (errorMessage) => {}
+          )
+          .then(() => {
+            startBtn.style.display = "none";
+            stopBtn.style.display = "inline-block";
+          })
+          .catch((err) => {
+            alert("Unable to start camera. Please check camera permissions.");
+          });
+      }
+      function stopQrScanner() {
+        const startBtn = document.getElementById("startScanBtn");
+        const stopBtn = document.getElementById("stopScanBtn");
+        if (html5QrCode) {
+          html5QrCode.stop().then(() => {
+            html5QrCode.clear();
+            html5QrCode = null;
+            startBtn.style.display = "inline-block";
+            stopBtn.style.display = "none";
+          });
+        }
+      }
+      function handleQrCodeScan(qrData) {
+        try {
+          const paymentData = JSON.parse(qrData);
+          if (paymentData.amount) {
+            selectedAmount = parseInt(paymentData.amount);
+            document.getElementById("customAmount").value = selectedAmount;
+            document
+              .querySelectorAll(".amount-btn")
+              .forEach((b) => b.classList.remove("active"));
+            updateDonateButton();
+          }
+          alert(
+            `Payment QR Code scanned successfully!\nAmount: $${
+              paymentData.amount || "Not specified"
+            }\nRecipient: ${paymentData.recipient || "Eco Yuva Foundation"}`
+          );
+        } catch (e) {
+          if (qrData.includes("amount=")) {
+            const urlParams = new URLSearchParams(qrData.split("?")[1]);
+            const amount = urlParams.get("amount");
+            if (amount) {
+              selectedAmount = parseInt(amount);
+              document.getElementById("customAmount").value = selectedAmount;
+              document
+                .querySelectorAll(".amount-btn")
+                .forEach((b) => b.classList.remove("active"));
+              updateDonateButton();
+            }
+          }
+          alert(
+            `QR Code scanned: ${qrData}\n\nThis appears to be a payment code. Please verify the details before proceeding.`
+          );
+        }
+      }
+
+      // Simulate recent donations
+      function updateRecentDonations() {
+        const donors = [
+          "John D.",
+          "Maria S.",
+          "Anonymous",
+          "David L.",
+          "Emma W.",
+          "Robert K.",
+        ];
+        const amounts = [25, 50, 75, 100, 150, 200, 250];
+        setInterval(() => {
+          const donationItems = document.querySelectorAll(".donation-item");
+          if (donationItems.length > 0) {
+            const randomDonor =
+              donors[Math.floor(Math.random() * donors.length)];
+            const randomAmount =
+              amounts[Math.floor(Math.random() * amounts.length)];
+            const firstItem = donationItems[0];
+            const avatar = firstItem.querySelector(".donor-avatar");
+            const name = firstItem.querySelector("h4");
+            const time = firstItem.querySelector("p");
+            const amount = firstItem.querySelector(".donation-amount");
+            avatar.textContent = randomDonor.charAt(0);
+            name.textContent = randomDonor;
+            time.textContent = "Just now";
+            amount.textContent = `$${randomAmount}`;
+            firstItem.style.background = "#ecfdf5";
+            setTimeout(() => {
+              firstItem.style.background = "#f8fafc";
+            }, 2000);
+          }
+        }, 30000);
+      }
+      // BACKEND FUNCTIONALITY COMMENTED OUT FOR FRONTEND-ONLY BUILD
+      // Replace with your real API endpoint for recent donations (all users, not just logged-in user)
+      /*
+async function fetchRecentDonations() {
+    try {
+        // Example: fetch the 4 most recent donations (adjust endpoint as needed)
+        const res = await fetch('http://localhost:5000/api/donations/recent');
+        if (!res.ok) return null;
+        const data = await res.json();
+        return data;
+    } catch (e) {
+        return null;
+    }
+}
+*/
+
+      // BACKEND FUNCTIONALITY COMMENTED OUT FOR FRONTEND-ONLY BUILD
+      /*
+document.addEventListener('DOMContentLoaded', async function() {
+    const recentDonationsList = document.getElementById('recentDonationsList');
+    if (!recentDonationsList) return;
+
+    const donations = await fetchRecentDonations();
+    if (donations && donations.length > 0) {
+        recentDonationsList.innerHTML = donations.slice(0, 4).map(d => `
+            <div class="donation-item">
+                <div class="donor-avatar">${d.anonymous ? 'A' : (d.donorName ? d.donorName.charAt(0).toUpperCase() : 'D')}</div>
+                <div class="donation-details">
+                    <h4>${d.anonymous ? 'Anonymous' : (d.donorName || 'Donor')}</h4>
+                    <p>${timeAgo(new Date(d.createdAt))}</p>
+                </div>
+                <div class="donation-amount">₹${d.amount/100}</div>
+            </div>
+        `).join('');
+    }
+});
+*/
+
+      // Helper function for "x minutes ago"
+      function timeAgo(date) {
+        const now = new Date();
+        const diff = Math.floor((now - date) / 60000); // minutes
+        if (diff < 1) return "Just now";
+        if (diff === 1) return "1 minute ago";
+        if (diff < 60) return `${diff} minutes ago`;
+        const hours = Math.floor(diff / 60);
+        if (hours === 1) return "1 hour ago";
+        if (hours < 24) return `${hours} hours ago`;
+        const days = Math.floor(hours / 24);
+        if (days === 1) return "1 day ago";
+        return `${days} days ago`;
+      }
+    </script>
+  </body>
+</html>

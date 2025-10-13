@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Signup - Eco Yuva Foundation</title>
+    <meta name="description" content="Login or create an account with Eco Yuva Foundation.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #0f172a;
+        }
+        .form-group input {
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+        .submit-btn {
+            width: 100%;
+            background: #10b981;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .submit-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        /* --- [ END ] Original CSS from your page --- */
+
+        /* --- [ START ] New CSS for Auth Page --- */
+        .auth-body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 70%, #10b981 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .auth-container {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+        .auth-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+        .auth-logo .highlight {
+            color: #10b981;
+        }
+        .auth-container h2 {
+            font-size: 20px;
+            color: #475569;
+            margin-bottom: 24px;
+        }
+        .toggle-buttons {
+            display: flex;
+            border: 1px solid #e2e8f0;
+            border-radius: 50px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        .toggle-btn {
+            flex: 1;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #64748b;
+            transition: all 0.3s ease;
+        }
+        .toggle-btn.active {
+            background: #10b981;
+            color: white;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        .auth-form .form-group {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+        .auth-form {
+            display: none;
+        }
+        .auth-form.active {
+            display: block;
+        }
+        .form-footer {
+            margin-top: 16px;
+            font-size: 14px;
+            color: #64748b;
+        }
+        .form-footer a {
+            color: #10b981;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+        <style>
+/* ...existing styles... */
+
+/* Toggle Buttons Styling */
+.toggle-buttons {
+    display: flex;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    background: #f1f5f9;
+    box-shadow: 0 2px 12px rgba(16,185,129,0.08);
+    position: relative;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 14px 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    color: #64748b;
+    transition: color 0.3s, background 0.3s, box-shadow 0.3s;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 1px;
+}
+
+.toggle-btn.active {
+    background: linear-gradient(90deg, #10b981 0%, #1e293b 100%);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(16,185,129,0.18);
+    border-radius: 50px;
+    transform: scale(1.04);
+}
+
+.toggle-btn:not(.active):hover {
+    background: #e0f7ef;
+    color: #10b981;
+}
+
+
+.toggle-btn:not(:last-child) {
+    border-right: 1px solid #e2e8f0;
+}
+</style>
+        
+    </style>
+</head>
+<body class="auth-body">
+
+    <div class="auth-container">
+        <a href="index.html" style="text-decoration: none;">
+             <h1 class="auth-logo">Eco Yuva <span class="highlight">Foundation</span></h1>
+        </a>
+        <h2>Welcome Back!</h2>
+
+        <div class="toggle-buttons">
+            <button id="showLogin" class="toggle-btn active" onclick="showForm('login')">Login</button>
+            <button id="showSignup" class="toggle-btn" onclick="showForm('signup')">Sign Up</button>
+        </div>
+
+        <form id="loginForm" class="auth-form active">
+            <div class="form-group">
+                <input name="email" type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <input name="password" type="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+            <p class="form-footer">
+                <a href="#">Forgot Password?</a>
+            </p>
+        </form>
+
+        <form id="signupForm" class="auth-form">
+            <div class="form-group">
+                <input name="name" type="text" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <input name="password" type="password" placeholder="Create Password" required>
+            </div>
+            <button type="submit" class="submit-btn">Create Account</button>
+             <p class="form-footer">
+                By signing up, you agree to our <a href="#">Terms of Service</a>.
+            </p>
+        </form>
+    </div>
+
+    <script>
+        const loginFormEl = document.getElementById('loginForm');
+        const signupFormEl = document.getElementById('signupForm');
+        const showLoginBtn = document.getElementById('showLogin');
+        const showSignupBtn = document.getElementById('showSignup');
+
+        function showForm(formName) {
+            if (formName === 'login') {
+                loginFormEl.classList.add('active');
+                signupFormEl.classList.remove('active');
+                showLoginBtn.classList.add('active');
+                showSignupBtn.classList.remove('active');
+            } else {
+                loginFormEl.classList.remove('active');
+                signupFormEl.classList.add('active');
+                showLoginBtn.classList.remove('active');
+                showSignupBtn.classList.add('active');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Signup Logic
+            signupFormEl.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const name = this.querySelector('input[name="name"]').value;
+                const email = this.querySelector('input[name="email"]').value;
+                const password = this.querySelector('input[name="password"]').value;
+
+                // BACKEND FUNCTIONALITY COMMENTED OUT FOR FRONTEND-ONLY BUILD
+                /*
+                try {
+                    const res = await fetch('http://localhost:5000/api/auth/signup', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, password })
+                    });
+                    const data = await res.json();
+                    if (res.ok) {
+                        alert('Signup successful! Please log in.');
+                        showForm('login');
+                        signupFormEl.reset();
+                    } else {
+                        throw new Error(data.message || 'Signup failed');
+                    }
+                } catch (err) {
+                    alert('Signup Error: ' + err.message);
+                }
+                */
+            });
+
+            // Login Logic
+            loginFormEl.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[name="email"]').value;
+                const password = this.querySelector('input[name="password"]').value;
+
+                // BACKEND FUNCTIONALITY COMMENTED OUT FOR FRONTEND-ONLY BUILD
+                /*
+                try {
+                    const res = await fetch('http://localhost:5000/api/auth/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email, password })
+                    });
+                    const data = await res.json();
+                    if (res.ok) {
+                        localStorage.setItem('token', data.token);
+                        alert('Login successful! Redirecting you.');
+                        window.location.href = 'index.html';
+                    } else {
+                        throw new Error(data.message || 'Login failed');
+                    }
+                } catch (err) {
+                    alert('Login Error: ' + err.message);
+                }
+                */
+            });
+        });
+    </script>
+</body>
+</html>

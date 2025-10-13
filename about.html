@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Eco Yuva Foundation</title>
+    <meta
+      name="description"
+      content="Learn about Eco Yuva Foundation's mission, vision, team, and impact. Discover how we're making a difference in communities worldwide."
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: #0f172a;
+        background-color: #f8fafc;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles - Same as original */
+      .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: linear-gradient(
+          90deg,
+          #0f172a 0%,
+          #1e293b 70%,
+          #10b981 100%
+        );
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-bar {
+        background: #f1f5f9;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 8px 0;
+      }
+
+      .contact-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .contact-info {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: #475569;
+        font-size: 14px;
+      }
+
+      .contact-info a {
+        color: #10b981;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social-links a {
+        color: #64748b;
+        font-size: 18px;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: #10b981;
+        transform: scale(1.1);
+      }
+
+      .navbar {
+        padding: 16px 0;
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 32px;
+      }
+
+      .nav-menu a {
+        color: #e2e8f0;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s ease;
+        cursor: pointer;
+      }
+
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        color: #10b981;
+      }
+
+      .back-btn {
+        background: #10b981;
+        color: #0f172a;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        background: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 70%,
+          #10b981 100%
+        );
+        color: white;
+        padding: 160px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>');
+        opacity: 0.3;
+      }
+
+      .hero .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 24px;
+        animation: fadeInDown 1s ease-out;
+      }
+
+      .hero-content h1 .highlight {
+        color: #10b981;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+        color: #cbd5e1;
+        margin-bottom: 32px;
+        animation: fadeInUp 1.3s ease-out;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        animation: fadeInUp 1.5s ease-out;
+      }
+
+      .hero-stat {
+        text-align: center;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+      }
+
+      .hero-stat .number {
+        font-size: 32px;
+        font-weight: 700;
+        color: #10b981;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .hero-stat .label {
+        font-size: 14px;
+        color: #e2e8f0;
+      }
+
+      .hero-image {
+        position: relative;
+        animation: fadeInRight 1.2s ease-out;
+      }
+
+      .hero-image img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-badge {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        background: #10b981;
+        color: #0f172a;
+        padding: 20px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+      }
+
+      .hero-badge .number {
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .hero-badge .label {
+        font-size: 12px;
+      }
+
+      /* Mission Vision Values */
+      .mvv-section {
+        padding: 100px 0;
+        background: white;
+      }
+
+      .mvv-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+      }
+
+      .mvv-card {
+        background: #f8fafc;
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        position: relative;
+        transition: all 0.4s ease;
+        border-top: 4px solid #10b981;
+      }
+
+      .mvv-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(16, 185, 129, 0.15);
+        background: white;
+      }
+
+      .mvv-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        font-size: 32px;
+        color: white;
+      }
+
+      .mvv-card h3 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 16px;
+      }
+
+      .mvv-card p {
+        color: #475569;
+        line-height: 1.7;
+        font-size: 16px;
+      }
+
+      /* Story Section */
+      .story-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      }
+
+      .story-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .story-content h2 {
+        font-size: 42px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 24px;
+        line-height: 1.2;
+      }
+
+      .story-content .highlight {
+        color: #10b981;
+      }
+
+      .story-content p {
+        font-size: 18px;
+        color: #475569;
+        margin-bottom: 24px;
+        line-height: 1.8;
+      }
+
+      .story-timeline {
+        margin-top: 40px;
+      }
+
+      .timeline-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 32px;
+        position: relative;
+      }
+
+      .timeline-year {
+        background: #10b981;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 14px;
+        margin-right: 20px;
+        min-width: 80px;
+        text-align: center;
+      }
+
+      .timeline-content h4 {
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 8px;
+      }
+
+      .timeline-content p {
+        color: #64748b;
+        font-size: 14px;
+        margin: 0;
+      }
+
+      .story-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .story-images img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .story-images img:hover {
+        transform: scale(1.05);
+      }
+
+      .story-images img:first-child {
+        transform: rotate(2deg);
+      }
+
+      .story-images img:last-child {
+        transform: rotate(-2deg);
+        margin-top: 20px;
+      }
+
+      .story-images img:first-child:hover {
+        transform: rotate(0deg) scale(1.05);
+      }
+
+      .story-images img:last-child:hover {
+        transform: rotate(0deg) scale(1.05);
+      }
+
+      /* Team Section */
+      .team-section {
+        padding: 100px 0;
+        background: white;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 80px;
+      }
+
+      .section-header h2 {
+        font-size: 42px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 16px;
+      }
+
+      .section-header p {
+        font-size: 18px;
+        color: #64748b;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+      }
+
+      .team-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        position: relative;
+      }
+
+      .team-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 60px rgba(16, 185, 129, 0.15);
+      }
+
+      .team-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+      }
+
+      .team-image {
+        height: 280px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .team-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(15, 23, 42, 0.8) 100%
+        );
+        display: flex;
+        align-items: flex-end;
+        padding: 24px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .team-card:hover .team-overlay {
+        opacity: 1;
+      }
+
+      .team-social {
+        display: flex;
+        gap: 12px;
+      }
+
+      .team-social a {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .team-social a:hover {
+        background: #10b981;
+        transform: scale(1.1);
+      }
+
+      .team-content {
+        padding: 32px;
+        text-align: center;
+      }
+
+      .team-content h3 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 8px;
+      }
+
+      .team-content .position {
+        color: #10b981;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .team-content p {
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .team-stats {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 20px;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .team-stat {
+        text-align: center;
+      }
+
+      .team-stat .number {
+        font-size: 20px;
+        font-weight: 700;
+        color: #10b981;
+      }
+
+      .team-stat .label {
+        font-size: 12px;
+        color: #64748b;
+      }
+
+      /* Impact Numbers */
+      .impact-section {
+        padding: 100px 0;
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 70%,
+          #10b981 100%
+        );
+        color: white;
+      }
+
+      .impact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+      }
+
+      .impact-card {
+        text-align: center;
+        padding: 40px 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .impact-card:hover {
+        transform: translateY(-8px);
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .impact-icon {
+        font-size: 48px;
+        color: #10b981;
+        margin-bottom: 20px;
+      }
+
+      .impact-number {
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: 8px;
+        color: #10b981;
+      }
+
+      .impact-label {
+        font-size: 16px;
+        color: #e2e8f0;
+        margin-bottom: 12px;
+      }
+
+      .impact-description {
+        font-size: 14px;
+        color: #cbd5e1;
+        line-height: 1.6;
+      }
+
+      /* Awards Section */
+      .awards-section {
+        padding: 100px 0;
+        background: white;
+      }
+
+      .awards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+
+      .award-card {
+        background: #f8fafc;
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-left: 4px solid #10b981;
+      }
+
+      .award-card:hover {
+        background: white;
+        box-shadow: 0 12px 40px rgba(16, 185, 129, 0.1);
+        transform: translateY(-4px);
+      }
+
+      .award-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        font-size: 32px;
+        color: white;
+      }
+
+      .award-card h3 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 8px;
+      }
+
+      .award-year {
+        color: #10b981;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .award-card p {
+        color: #64748b;
+        line-height: 1.6;
+      }
+
+      /* Partners Section */
+      .partners-section {
+        padding: 80px 0;
+        background: #f8fafc;
+      }
+
+      .partners-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        align-items: center;
+      }
+
+      .partner-logo {
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .partner-logo:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(16, 185, 129, 0.1);
+      }
+
+      .partner-logo img {
+        max-width: 100%;
+        max-height: 60px;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+      }
+
+      .partner-logo:hover img {
+        opacity: 1;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+        text-align: center;
+      }
+
+      .cta-content h2 {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+
+      .cta-content p {
+        font-size: 20px;
+        margin-bottom: 40px;
+        opacity: 0.9;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .cta-btn {
+        padding: 16px 32px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .cta-btn.primary {
+        background: white;
+        color: #10b981;
+      }
+
+      .cta-btn.secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Footer */
+      .footer {
+        background: linear-gradient(
+          90deg,
+          #0f172a 0%,
+          #1e293b 70%,
+          #10b981 100%
+        );
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .footer p {
+        color: #cbd5e1;
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 16px;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .nav-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: #0f172a;
+          flex-direction: column;
+          padding: 20px;
+          gap: 16px;
+        }
+
+        .nav-menu.active {
+          display: flex;
+        }
+
+        .hero .container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .hero-content h1 {
+          font-size: 32px;
+        }
+
+        .hero-stats {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .story-container {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .story-content h2 {
+          font-size: 32px;
+        }
+
+        .section-header h2 {
+          font-size: 32px;
+        }
+
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .impact-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+
+        .cta-content h2 {
+          font-size: 32px;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .hero-badge {
+          position: static;
+          margin-top: 20px;
+          display: inline-block;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          padding: 120px 0 60px;
+        }
+
+        .mvv-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .awards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .impact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <!-- Contact Bar -->
+
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="container">
+          <a href="index.html" class="logo">Eco Yuva Foundation</a>
+          <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="missions.html">Missions</a></li>
+            <li><a href="#" class="active">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li>
+              <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>About <span class="highlight">Eco Yuva Foundation</span></h1>
+          <p>
+            We are a dedicated team of changemakers committed to creating
+            lasting impact in communities worldwide. Since 2019, we've been
+            transforming lives through compassionate action, innovative
+            programs, and unwavering dedication to human dignity.
+          </p>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="number">5</span>
+              <span class="label">Years of Service</span>
+            </div>
+            <div class="hero-stat">
+              <span class="number">23</span>
+              <span class="label">Countries Served</span>
+            </div>
+            <div class="hero-stat">
+              <span class="number">150K+</span>
+              <span class="label">Lives Transformed</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop&q=60"
+            alt="Eco Yuva Foundation Team"
+          />
+          <div class="hero-badge">
+            <div class="number">98%</div>
+            <div class="label">Transparency Rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission, Vision, Values -->
+    <section class="mvv-section">
+      <div class="container">
+        <div class="mvv-grid">
+          <div class="mvv-card">
+            <div class="mvv-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Our Mission</h3>
+            <p>
+              To empower communities worldwide by providing essential resources,
+              education, and opportunities that enable individuals and families
+              to build sustainable, dignified lives while fostering hope and
+              resilience.
+            </p>
+          </div>
+
+          <div class="mvv-card">
+            <div class="mvv-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Our Vision</h3>
+            <p>
+              A world where every person has access to basic necessities,
+              quality education, healthcare, and opportunities to thrive,
+              regardless of their circumstances or geographic location.
+            </p>
+          </div>
+
+          <div class="mvv-card">
+            <div class="mvv-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Our Values</h3>
+            <p>
+              Compassion guides our actions, transparency builds trust,
+              innovation drives solutions, and collaboration amplifies our
+              impact. We believe in dignity, equality, and the inherent
+              potential of every human being.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Meet Our Team</h2>
+          <p>
+            Dedicated professionals and passionate volunteers working together
+            to create meaningful change
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <div
+              class="team-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=60');
+              "
+            >
+              <div class="team-overlay">
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-content">
+              <h3>Muhammad Ali Baig</h3>
+              <div class="position">Founder & CEO</div>
+              <p>
+                Visionary leader with 15+ years in humanitarian work, dedicated
+                to creating sustainable change in underserved communities.
+              </p>
+              <div class="team-stats">
+                <div class="team-stat">
+                  <div class="number">15+</div>
+                  <div class="label">Years Experience</div>
+                </div>
+                <div class="team-stat">
+                  <div class="number">50+</div>
+                  <div class="label">Projects Led</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div
+              class="team-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&auto=format&fit=crop&q=60');
+              "
+            >
+              <div class="team-overlay">
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-content">
+              <h3>Sarah Ahmed</h3>
+              <div class="position">Director of Operations</div>
+              <p>
+                Expert in program management and community development, ensuring
+                efficient delivery of our mission worldwide.
+              </p>
+              <div class="team-stats">
+                <div class="team-stat">
+                  <div class="number">12+</div>
+                  <div class="label">Years Experience</div>
+                </div>
+                <div class="team-stat">
+                  <div class="number">23</div>
+                  <div class="label">Countries Managed</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div
+              class="team-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60');
+              "
+            >
+              <div class="team-overlay">
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-content">
+              <h3>Dr. Hassan Khan</h3>
+              <div class="position">Medical Director</div>
+              <p>
+                Leading physician coordinating healthcare initiatives and
+                medical camps across our global mission sites.
+              </p>
+              <div class="team-stats">
+                <div class="team-stat">
+                  <div class="number">20+</div>
+                  <div class="label">Years Experience</div>
+                </div>
+                <div class="team-stat">
+                  <div class="number">15K+</div>
+                  <div class="label">Patients Treated</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div
+              class="team-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop&q=60');
+              "
+            >
+              <div class="team-overlay">
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-content">
+              <h3>Fatima Malik</h3>
+              <div class="position">Education Coordinator</div>
+              <p>
+                Passionate educator developing innovative learning programs and
+                digital literacy initiatives for underserved communities.
+              </p>
+              <div class="team-stats">
+                <div class="team-stat">
+                  <div class="number">8+</div>
+                  <div class="label">Years Experience</div>
+                </div>
+                <div class="team-stat">
+                  <div class="number">5K+</div>
+                  <div class="label">Students Impacted</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div
+              class="team-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=60');
+              "
+            >
+              <div class="team-overlay">
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-content">
+              <h3>Omar Rashid</h3>
+              <div class="position">Technology Director</div>
+              <p>
+                Tech innovator bridging the digital divide through cutting-edge
+                solutions and digital inclusion programs.
+              </p>
+              <div class="team-stats">
+                <div class="team-stat">
+                  <div class="number">10+</div>
+                  <div class="label">Years Experience</div>
+                </div>
+                <div class="team-stat">
+                  <div class="number">28</div>
+                  <div class="label">Tech Centers</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div
+              class="team-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&auto=format&fit=crop&q=60');
+              "
+            >
+              <div class="team-overlay">
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-content">
+              <h3>Aisha Patel</h3>
+              <div class="position">Community Relations</div>
+              <p>
+                Building bridges between communities and creating sustainable
+                partnerships that amplify our collective impact.
+              </p>
+              <div class="team-stats">
+                <div class="team-stat">
+                  <div class="number">6+</div>
+                  <div class="label">Years Experience</div>
+                </div>
+                <div class="team-stat">
+                  <div class="number">100+</div>
+                  <div class="label">Partnerships</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Numbers -->
+    <section class="impact-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Global Impact</h2>
+          <p>
+            Numbers that tell the story of lives transformed and communities
+            empowered
+          </p>
+        </div>
+
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="impact-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="impact-number">150,000+</div>
+            <div class="impact-label">Lives Impacted</div>
+            <div class="impact-description">
+              Individuals and families who have directly benefited from our
+              programs and initiatives
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <div class="impact-number">2.5M+</div>
+            <div class="impact-label">Meals Provided</div>
+            <div class="impact-description">
+              Nutritious meals served through our food security and community
+              kitchen programs
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="impact-number">25,000+</div>
+            <div class="impact-label">Students Educated</div>
+            <div class="impact-description">
+              Children and adults who gained access to quality education and
+              digital literacy
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <div class="impact-number">50,000+</div>
+            <div class="impact-label">Medical Treatments</div>
+            <div class="impact-description">
+              Healthcare services provided through mobile clinics and medical
+              camps
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <div class="impact-number">3,500+</div>
+            <div class="impact-label">Families Housed</div>
+            <div class="impact-description">
+              Safe, sustainable housing solutions provided to displaced and
+              vulnerable families
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <div class="impact-number">100,000+</div>
+            <div class="impact-label">Trees Planted</div>
+            <div class="impact-description">
+              Environmental restoration through reforestation and sustainability
+              initiatives
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="awards-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Awards & Recognition</h2>
+          <p>
+            Honored to be recognized for our commitment to humanitarian
+            excellence
+          </p>
+        </div>
+
+        <div class="awards-grid">
+          <div class="award-card">
+            <div class="award-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3>Global Humanitarian Award</h3>
+            <div class="award-year">2023</div>
+            <p>
+              Recognized by the International Humanitarian Council for
+              outstanding contribution to global welfare and community
+              development.
+            </p>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <h3>Excellence in Education</h3>
+            <div class="award-year">2023</div>
+            <p>
+              UNESCO recognition for innovative digital learning programs and
+              educational infrastructure development in underserved areas.
+            </p>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3>Transparency Champion</h3>
+            <div class="award-year">2022</div>
+            <p>
+              Charity Navigator's highest rating for financial transparency and
+              accountability in nonprofit operations.
+            </p>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Environmental Impact Award</h3>
+            <div class="award-year">2022</div>
+            <p>
+              Green Foundation Award for sustainable development practices and
+              environmental conservation initiatives.
+            </p>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Community Partnership Excellence</h3>
+            <div class="award-year">2021</div>
+            <p>
+              Recognition for building strong, sustainable partnerships with
+              local communities and organizations worldwide.
+            </p>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Healthcare Innovation Award</h3>
+            <div class="award-year">2021</div>
+            <p>
+              World Health Organization recognition for mobile healthcare
+              delivery and medical accessibility programs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Partners</h2>
+          <p>Collaborating with leading organizations to amplify our impact</p>
+        </div>
+
+        <div class="partners-grid">
+          <div class="partner-logo">
+            <div style="font-weight: 700; color: #10b981; font-size: 18px">
+              UNICEF
+            </div>
+          </div>
+          <div class="partner-logo">
+            <div style="font-weight: 700; color: #10b981; font-size: 18px">
+              WHO
+            </div>
+          </div>
+          <div class="partner-logo">
+            <div style="font-weight: 700; color: #10b981; font-size: 18px">
+              UNESCO
+            </div>
+          </div>
+          <div class="partner-logo">
+            <div style="font-weight: 700; color: #10b981; font-size: 18px">
+              Red Cross
+            </div>
+          </div>
+          <div class="partner-logo">
+            <div style="font-weight: 700; color: #10b981; font-size: 18px">
+              Oxfam
+            </div>
+          </div>
+          <div class="partner-logo">
+            <div style="font-weight: 700; color: #10b981; font-size: 18px">
+              Save the Children
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Join Our Mission</h2>
+          <p>
+            Be part of a global movement that's creating lasting change.
+            Together, we can build a better world for everyone.
+          </p>
+          <div class="cta-buttons">
+            <a href="donate.html" class="cta-btn primary">
+              <i class="fas fa-heart"></i>
+              Donate Now
+            </a>
+            <a href="#volunteer" class="cta-btn secondary">
+              <i class="fas fa-hands-helping"></i>
+              Become a Volunteer
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; 2024 Eco Yuva Foundation. All rights reserved. | Making a
+          difference, one life at a time.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      }
+
+      // Animate counters when they come into view
+      function animateCounters() {
+        const counters = document.querySelectorAll(
+          ".impact-number, .hero-stat .number, .team-stat .number"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(
+                  counter.textContent.replace(/[^\d]/g, "")
+                );
+                const duration = 2000;
+                let start = 0;
+                const increment = target / (duration / 16);
+
+                const updateCounter = () => {
+                  start += increment;
+                  if (start < target) {
+                    const currentValue = Math.floor(start);
+                    if (counter.textContent.includes("K")) {
+                      counter.textContent =
+                        (currentValue / 1000).toFixed(0) + "K+";
+                    } else if (counter.textContent.includes("M")) {
+                      counter.textContent =
+                        (currentValue / 1000000).toFixed(1) + "M+";
+                    } else {
+                      counter.textContent =
+                        currentValue.toLocaleString() +
+                        (counter.textContent.includes("+") ? "+" : "");
+                    }
+                    requestAnimationFrame(updateCounter);
+                  } else {
+                    // Set final value
+                    if (counter.textContent.includes("K")) {
+                      counter.textContent = (target / 1000).toFixed(0) + "K+";
+                    } else if (counter.textContent.includes("M")) {
+                      counter.textContent =
+                        (target / 1000000).toFixed(1) + "M+";
+                    } else {
+                      counter.textContent =
+                        target.toLocaleString() +
+                        (counter.textContent.includes("+") ? "+" : "");
+                    }
+                  }
+                };
+
+                updateCounter();
+                observer.unobserve(counter);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        counters.forEach((counter) => {
+          observer.observe(counter);
+        });
+      }
+
+      // Animate cards on scroll
+      function animateCards() {
+        const cards = document.querySelectorAll(
+          ".mvv-card, .team-card, .award-card, .impact-card"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        cards.forEach((card, index) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(30px)";
+          card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+          observer.observe(card);
+        });
+      }
+
+      // Initialize animations when page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        animateCounters();
+        animateCards();
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const navMenu = document.getElementById("navMenu");
+        const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+
+        if (
+          !navMenu.contains(event.target) &&
+          !mobileMenuBtn.contains(event.target)
+        ) {
+          navMenu.classList.remove("active");
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add parallax effect to hero section
+      window.addEventListener("scroll", function () {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector(".hero");
+        if (hero && scrolled < hero.offsetHeight) {
+          hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        }
+      });
+
+      // Team card hover effects
+      document.querySelectorAll(".team-card").forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+          this.querySelector(".team-overlay").style.opacity = "1";
+        });
+
+        card.addEventListener("mouseleave", function () {
+          this.querySelector(".team-overlay").style.opacity = "0";
+        });
+      });
+
+      // Add loading animation for timeline items
+      function animateTimeline() {
+        const timelineItems = document.querySelectorAll(".timeline-item");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateX(0)";
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+
+        timelineItems.forEach((item, index) => {
+          item.style.opacity = "0";
+          item.style.transform = "translateX(-30px)";
+          item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+          observer.observe(item);
+        });
+      }
+
+      // Initialize timeline animation
+      animateTimeline();
+    </script>
+  </body>
+</html>

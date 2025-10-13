@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Missions - Eco Yuva Foundation</title>
+    <meta
+      name="description"
+      content="Discover Eco Yuva Foundation's missions to transform communities through education, healthcare, food security, and sustainable development."
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: #0f172a;
+        background-color: #f8fafc;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      .header {
+        background: linear-gradient(
+          90deg,
+          #0f172a 0%,
+          #1e293b 70%,
+          #10b981 100%
+        );
+        color: white;
+        padding: 16px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: #e2e8f0;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #10b981;
+      }
+
+      .back-btn {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        padding: 8px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #10b981 100%
+        );
+        color: white;
+        padding: 120px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%2310b981" stop-opacity="0.1"/><stop offset="100%" stop-color="%2310b981" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>');
+        opacity: 0.3;
+      }
+
+      .hero .container {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+        font-weight: 800;
+        margin-bottom: 24px;
+        background: linear-gradient(135deg, #ffffff 0%, #10b981 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero p {
+        font-size: 22px;
+        color: #cbd5e1;
+        max-width: 700px;
+        margin: 0 auto 40px;
+        line-height: 1.7;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 32px;
+        margin-top: 60px;
+      }
+
+      .hero-stat {
+        text-align: center;
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .hero-stat h3 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #10b981;
+        margin-bottom: 8px;
+      }
+
+      .hero-stat p {
+        color: #e2e8f0;
+        font-size: 16px;
+      }
+
+      /* Mission Pillars */
+      .mission-pillars {
+        padding: 100px 0;
+        background: white;
+        position: relative;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 80px;
+      }
+
+      .section-header h2 {
+        font-size: 42px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 16px;
+      }
+
+      .section-header p {
+        font-size: 20px;
+        color: #64748b;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+
+      .pillar-card {
+        background: #f8fafc;
+        border-radius: 24px;
+        padding: 40px;
+        text-align: center;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+      }
+
+      .pillar-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #10b981, #059669);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+      }
+
+      .pillar-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 25px 60px rgba(16, 185, 129, 0.15);
+        border-color: #10b981;
+      }
+
+      .pillar-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .pillar-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #10b981, #059669);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        font-size: 32px;
+        color: white;
+        transition: transform 0.4s ease;
+      }
+
+      .pillar-card:hover .pillar-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .pillar-card h3 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 16px;
+      }
+
+      .pillar-card p {
+        color: #64748b;
+        margin-bottom: 24px;
+        line-height: 1.7;
+      }
+
+      .pillar-stats {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 24px;
+        padding-top: 24px;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .pillar-stat {
+        text-align: center;
+      }
+
+      .pillar-stat .number {
+        font-size: 20px;
+        font-weight: 700;
+        color: #10b981;
+      }
+
+      .pillar-stat .label {
+        font-size: 12px;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Mission Timeline */
+      .mission-timeline {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #f8fafc 0%, #ecfdf5 100%);
+      }
+
+      .timeline-container {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(to bottom, #10b981, #059669);
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        display: flex;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .timeline-item:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .timeline-content {
+        flex: 1;
+        background: white;
+        padding: 32px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        margin: 0 40px;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(16, 185, 129, 0.15);
+      }
+
+      .timeline-content::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        background: #10b981;
+        border-radius: 50%;
+        transform: translateY(-50%);
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content::before {
+        right: -50px;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content::before {
+        left: -50px;
+      }
+
+      .timeline-year {
+        font-size: 18px;
+        font-weight: 700;
+        color: #10b981;
+        margin-bottom: 12px;
+      }
+
+      .timeline-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 12px;
+      }
+
+      .timeline-description {
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 16px;
+      }
+
+      .timeline-impact {
+        display: flex;
+        gap: 24px;
+        margin-top: 20px;
+      }
+
+      .impact-metric {
+        text-align: center;
+      }
+
+      .impact-metric .number {
+        font-size: 18px;
+        font-weight: 700;
+        color: #10b981;
+      }
+
+      .impact-metric .label {
+        font-size: 12px;
+        color: #64748b;
+      }
+
+      /* Impact Stories */
+      .impact-stories {
+        padding: 100px 0;
+        background: white;
+      }
+
+      .stories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+      }
+
+      .story-card {
+        background: #f8fafc;
+        border-radius: 24px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        position: relative;
+      }
+
+      .story-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .story-image {
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .story-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+        display: flex;
+        align-items: flex-end;
+        padding: 24px;
+      }
+
+      .story-category {
+        background: #10b981;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .story-content {
+        padding: 32px;
+      }
+
+      .story-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 12px;
+      }
+
+      .story-excerpt {
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .story-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .author-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #10b981;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 600;
+      }
+
+      .author-info h4 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #0f172a;
+      }
+
+      .author-info p {
+        font-size: 12px;
+        color: #64748b;
+      }
+
+      /* Volunteer Section */
+      .volunteer-section {
+        padding: 100px 0;
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #10b981 100%
+        );
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .volunteer-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="%2310b981" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+      }
+
+      .volunteer-content {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .volunteer-text h2 {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+
+      .volunteer-text p {
+        font-size: 18px;
+        color: #cbd5e1;
+        margin-bottom: 32px;
+        line-height: 1.7;
+      }
+
+      .volunteer-benefits {
+        list-style: none;
+        margin-bottom: 40px;
+      }
+
+      .volunteer-benefits li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        font-size: 16px;
+        color: #e2e8f0;
+      }
+
+      .volunteer-benefits li::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: #10b981;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 10px;
+        color: white;
+      }
+
+      .volunteer-benefits li:nth-child(1)::before {
+        content: "\f004";
+      }
+      .volunteer-benefits li:nth-child(2)::before {
+        content: "\f0c0";
+      }
+      .volunteer-benefits li:nth-child(3)::before {
+        content: "\f19d";
+      }
+      .volunteer-benefits li:nth-child(4)::before {
+        content: "\f091";
+      }
+
+      .volunteer-cta {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background: #10b981;
+        color: #0f172a;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-primary:hover {
+        background: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: #10b981;
+        padding: 16px 32px;
+        border: 2px solid #10b981;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-secondary:hover {
+        background: #10b981;
+        color: #0f172a;
+      }
+
+      .volunteer-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+
+      .volunteer-stat {
+        text-align: center;
+        padding: 32px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+      }
+
+      .volunteer-stat h3 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #10b981;
+        margin-bottom: 8px;
+      }
+
+      .volunteer-stat p {
+        color: #cbd5e1;
+      }
+
+      /* Mission Gallery */
+      .mission-gallery {
+        padding: 100px 0;
+        background: #f8fafc;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.4s ease;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        display: flex;
+        align-items: flex-end;
+        padding: 24px;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .gallery-content h4 {
+        color: white;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .gallery-content p {
+        color: #cbd5e1;
+        font-size: 14px;
+      }
+
+      /* Call to Action */
+      .cta-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+        text-align: center;
+      }
+
+      .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .cta-content h2 {
+        font-size: 42px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 24px;
+      }
+
+      .cta-content p {
+        font-size: 20px;
+        color: #64748b;
+        margin-bottom: 40px;
+        line-height: 1.7;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* Footer */
+      .footer {
+        background: #0f172a;
+        color: white;
+        padding: 60px 0 24px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-section h4 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #10b981;
+      }
+
+      .footer-section p {
+        color: #cbd5e1;
+        line-height: 1.6;
+        margin-bottom: 16px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-section ul li a {
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section ul li a:hover {
+        color: #10b981;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        color: #cbd5e1;
+        font-size: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-social a:hover {
+        color: #10b981;
+        transform: scale(1.1);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #374151;
+        padding-top: 24px;
+        text-align: center;
+        color: #9ca3af;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 16px;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+
+        .section-header h2 {
+          font-size: 32px;
+        }
+
+        .pillars-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .timeline-line {
+          left: 20px;
+        }
+
+        .timeline-item {
+          flex-direction: row !important;
+        }
+
+        .timeline-content {
+          margin-left: 60px;
+          margin-right: 0;
+        }
+
+        .timeline-content::before {
+          left: -50px !important;
+        }
+
+        .volunteer-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .volunteer-text h2 {
+          font-size: 32px;
+        }
+
+        .volunteer-stats {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-content h2 {
+          font-size: 32px;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .animate-on-scroll.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo">Eco Yuva Foundation</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <!-- <a href="donate.html">Donate</a> -->
+          <!-- <a href="missions.html">Missions</a> -->
+          <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Home
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Our Missions</h1>
+        <p>
+          We are committed to creating lasting change through strategic
+          initiatives that address the root causes of poverty, inequality, and
+          social injustice. Our missions are designed to empower communities and
+          build a better future for all.
+        </p>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <h3>25+</h3>
+            <p>Active Missions</p>
+          </div>
+          <div class="hero-stat">
+            <h3>50K+</h3>
+            <p>Lives Transformed</p>
+          </div>
+          <div class="hero-stat">
+            <h3>100+</h3>
+            <p>Communities Served</p>
+          </div>
+          <div class="hero-stat">
+            <h3>5</h3>
+            <p>Years of Impact</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Pillars -->
+    <section class="mission-pillars">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Mission Pillars</h2>
+          <p>
+            Four core areas where we focus our efforts to create maximum impact
+            and sustainable change in communities worldwide.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card animate-on-scroll">
+            <div class="pillar-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Education & Learning</h3>
+            <p>
+              Providing quality education, literacy programs, and skill
+              development opportunities to empower individuals and break the
+              cycle of poverty.
+            </p>
+            <div class="pillar-stats">
+              <div class="pillar-stat">
+                <div class="number">5,000+</div>
+                <div class="label">Students</div>
+              </div>
+              <div class="pillar-stat">
+                <div class="number">50+</div>
+                <div class="label">Schools</div>
+              </div>
+              <div class="pillar-stat">
+                <div class="number">200+</div>
+                <div class="label">Teachers</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pillar-card animate-on-scroll">
+            <div class="pillar-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3>Healthcare & Wellness</h3>
+            <p>
+              Ensuring access to essential healthcare services, medical
+              supplies, and health education to improve community well-being.
+            </p>
+            <div class="pillar-stats">
+              <div class="pillar-stat">
+                <div class="number">15,000+</div>
+                <div class="label">Patients</div>
+              </div>
+              <div class="pillar-stat">
+                <div class="number">25+</div>
+                <div class="label">Clinics</div>
+              </div>
+              <div class="pillar-stat">
+                <div class="number">100+</div>
+                <div class="label">Health Workers</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pillar-card animate-on-scroll">
+            <div class="pillar-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3>Food Security</h3>
+            <p>
+              Fighting hunger through food distribution, nutrition programs, and
+              sustainable agriculture initiatives that ensure long-term food
+              security.
+            </p>
+            <div class="pillar-stats">
+              <div class="pillar-stat">
+                <div class="number">100K+</div>
+                <div class="label">Meals</div>
+              </div>
+              <div class="pillar-stat">
+                <div class="number">2,000+</div>
+                <div class="label">Families</div>
+              </div>
+              <div class="pillar-stat">
+                <div class="number">30+</div>
+                <div class="label">Programs</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pillar-card animate-on-scroll">
+            <div class="pillar-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3>Community Development</h3>
+            <p>
+              Building stronger communities through infrastructure development,
+              economic empowerment, and social cohesion programs.
+            </p>
+            <div class="pillar-stats">
+              <div class="pillar-stat">
+                <div class="number">75+</div>
+                <div class="label">Projects</div>
+              </div>
+              <div class="pillar-stat">
+                <div class="number">500+</div>
+                <div class="label">Jobs Created</div>
+              </div>
+              <div class="pillar-stat">
+                <div class="number">40+</div>
+                <div class="label">Communities</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Timeline -->
+    <section class="mission-timeline">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Journey of Impact</h2>
+          <p>
+            A timeline of our major milestones and achievements in transforming
+            communities and changing lives.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="timeline-year">2019</div>
+              <div class="timeline-title">Foundation Established</div>
+              <div class="timeline-description">
+                Eco Yuva Foundation was founded with a vision to create lasting
+                change in underserved communities through compassionate giving
+                and strategic partnerships.
+              </div>
+              <div class="timeline-impact">
+                <div class="impact-metric">
+                  <div class="number">1</div>
+                  <div class="label">Community</div>
+                </div>
+                <div class="impact-metric">
+                  <div class="number">100</div>
+                  <div class="label">Beneficiaries</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="timeline-year">2020</div>
+              <div class="timeline-title">Education Initiative Launch</div>
+              <div class="timeline-description">
+                Launched our first major education program, providing school
+                supplies, books, and learning materials to children in rural
+                areas during the challenging pandemic period.
+              </div>
+              <div class="timeline-impact">
+                <div class="impact-metric">
+                  <div class="number">10</div>
+                  <div class="label">Schools</div>
+                </div>
+                <div class="impact-metric">
+                  <div class="number">1,000</div>
+                  <div class="label">Students</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="timeline-year">2021</div>
+              <div class="timeline-title">Healthcare Expansion</div>
+              <div class="timeline-description">
+                Expanded our reach to include healthcare services, establishing
+                mobile clinics and providing essential medical supplies to
+                remote communities.
+              </div>
+              <div class="timeline-impact">
+                <div class="impact-metric">
+                  <div class="number">5</div>
+                  <div class="label">Clinics</div>
+                </div>
+                <div class="impact-metric">
+                  <div class="number">5,000</div>
+                  <div class="label">Patients</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="timeline-year">2022</div>
+              <div class="timeline-title">Food Security Program</div>
+              <div class="timeline-description">
+                Launched comprehensive food security initiatives including meal
+                distribution, nutrition education, and sustainable farming
+                projects to combat hunger.
+              </div>
+              <div class="timeline-impact">
+                <div class="impact-metric">
+                  <div class="number">50K</div>
+                  <div class="label">Meals</div>
+                </div>
+                <div class="impact-metric">
+                  <div class="number">1,500</div>
+                  <div class="label">Families</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="timeline-year">2023</div>
+              <div class="timeline-title">Community Development Focus</div>
+              <div class="timeline-description">
+                Shifted focus to holistic community development, creating job
+                opportunities, building infrastructure, and fostering economic
+                empowerment.
+              </div>
+              <div class="timeline-impact">
+                <div class="impact-metric">
+                  <div class="number">25</div>
+                  <div class="label">Projects</div>
+                </div>
+                <div class="impact-metric">
+                  <div class="number">300</div>
+                  <div class="label">Jobs</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="timeline-year">2024</div>
+              <div class="timeline-title">Digital Innovation</div>
+              <div class="timeline-description">
+                Embracing technology to scale our impact, launching digital
+                platforms for education, telemedicine, and community engagement
+                to reach more people efficiently.
+              </div>
+              <div class="timeline-impact">
+                <div class="impact-metric">
+                  <div class="number">100+</div>
+                  <div class="label">Communities</div>
+                </div>
+                <div class="impact-metric">
+                  <div class="number">50K+</div>
+                  <div class="label">Lives Impacted</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Stories -->
+    <section class="impact-stories">
+      <div class="container">
+        <div class="section-header">
+          <h2>Stories of Transformation</h2>
+          <p>
+            Real stories from the communities we serve, showcasing the tangible
+            impact of our missions and the lives we've touched.
+          </p>
+        </div>
+
+        <div class="stories-grid">
+          <div class="story-card animate-on-scroll">
+            <div
+              class="story-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=600&auto=format&fit=crop&q=60');
+              "
+            >
+              <div class="story-overlay">
+                <div class="story-category">Education</div>
+              </div>
+            </div>
+            <div class="story-content">
+              <h3 class="story-title">From Dropout to Graduate</h3>
+              <p class="story-excerpt">
+                Amina was forced to leave school at age 12 to help her family.
+                Through our education program, she returned to learning and
+                recently graduated with honors, now pursuing her dream of
+                becoming a teacher.
+              </p>
+              <div class="story-author">
+                <div class="author-avatar">A</div>
+                <div class="author-info">
+                  <h4>Amina Hassan</h4>
+                  <p>Program Beneficiary</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-card animate-on-scroll">
+            <div
+              class="story-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&auto=format&fit=crop&q=60');
+              "
+            >
+              <div class="story-overlay">
+                <div class="story-category">Healthcare</div>
+              </div>
+            </div>
+            <div class="story-content">
+              <h3 class="story-title">Life-Saving Medical Care</h3>
+              <p class="story-excerpt">
+                When 8-year-old Omar fell seriously ill, his family couldn't
+                afford treatment. Our mobile clinic provided immediate care and
+                ongoing support, saving his life and giving him a bright future.
+              </p>
+              <div class="story-author">
+                <div class="author-avatar">F</div>
+                <div class="author-info">
+                  <h4>Fatima Al-Rashid</h4>
+                  <p>Omar's Mother</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-card animate-on-scroll">
+            <div
+              class="story-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&auto=format&fit=crop&q=60');
+              "
+            >
+              <div class="story-overlay">
+                <div class="story-category">Food Security</div>
+              </div>
+            </div>
+            <div class="story-content">
+              <h3 class="story-title">Breaking the Hunger Cycle</h3>
+              <p class="story-excerpt">
+                The Ahmed family struggled to put food on the table. Our
+                nutrition program not only provided meals but taught sustainable
+                farming techniques, helping them become self-sufficient.
+              </p>
+              <div class="story-author">
+                <div class="author-avatar">M</div>
+                <div class="author-info">
+                  <h4>Mohammed Ahmed</h4>
+                  <p>Community Leader</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-card animate-on-scroll">
+            <div
+              class="story-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&auto=format&fit=crop&q=60');
+              "
+            >
+              <div class="story-overlay">
+                <div class="story-category">Community</div>
+              </div>
+            </div>
+            <div class="story-content">
+              <h3 class="story-title">Empowering Women Entrepreneurs</h3>
+              <p class="story-excerpt">
+                Sarah started a small tailoring business with our microcredit
+                program. Today, she employs 15 women from her community and has
+                become a role model for female entrepreneurship.
+              </p>
+              <div class="story-author">
+                <div class="author-avatar">S</div>
+                <div class="author-info">
+                  <h4>Sarah Ibrahim</h4>
+                  <p>Entrepreneur</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-card animate-on-scroll">
+            <div
+              class="story-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&auto=format&fit=crop&q=60');
+              "
+            >
+              <div class="story-overlay">
+                <div class="story-category">Healthcare</div>
+              </div>
+            </div>
+            <div class="story-content">
+              <h3 class="story-title">Community Health Champions</h3>
+              <p class="story-excerpt">
+                Our health worker training program has created a network of
+                community champions who provide basic healthcare and health
+                education, reaching thousands in remote areas.
+              </p>
+              <div class="story-author">
+                <div class="author-avatar">D</div>
+                <div class="author-info">
+                  <h4>Dr. Aisha Malik</h4>
+                  <p>Program Director</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-card animate-on-scroll">
+            <div
+              class="story-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&auto=format&fit=crop&q=60');
+              "
+            >
+              <div class="story-overlay">
+                <div class="story-category">Education</div>
+              </div>
+            </div>
+            <div class="story-content">
+              <h3 class="story-title">Digital Learning Revolution</h3>
+              <p class="story-excerpt">
+                Our digital education initiative brought tablets and internet
+                connectivity to rural schools, opening up a world of learning
+                opportunities for students who had never used a computer before.
+              </p>
+              <div class="story-author">
+                <div class="author-avatar">R</div>
+                <div class="author-info">
+                  <h4>Rashid Khan</h4>
+                  <p>School Principal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section class="volunteer-section">
+      <div class="container">
+        <div class="volunteer-content">
+          <div class="volunteer-text">
+            <h2>Join Our Mission</h2>
+            <p>
+              Be part of something bigger than yourself. Our volunteers are the
+              heart of our organization, bringing passion, skills, and
+              dedication to every mission we undertake.
+            </p>
+
+            <ul class="volunteer-benefits">
+              <li>Make a meaningful impact in communities</li>
+              <li>Connect with like-minded changemakers</li>
+              <li>Develop new skills and experiences</li>
+              <li>Receive recognition and certificates</li>
+            </ul>
+
+            <div class="volunteer-cta">
+              <a href="#" class="btn-primary">Become a Volunteer</a>
+              <a href="#" class="btn-secondary">Learn More</a>
+            </div>
+          </div>
+
+          <div class="volunteer-stats">
+            <div class="volunteer-stat">
+              <h3>500+</h3>
+              <p>Active Volunteers</p>
+            </div>
+            <div class="volunteer-stat">
+              <h3>10,000+</h3>
+              <p>Volunteer Hours</p>
+            </div>
+            <div class="volunteer-stat">
+              <h3>25+</h3>
+              <p>Skill Areas</p>
+            </div>
+            <div class="volunteer-stat">
+              <h3>95%</h3>
+              <p>Satisfaction Rate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Gallery -->
+    <section class="mission-gallery">
+      <div class="container">
+        <div class="section-header">
+          <h2>Missions in Action</h2>
+          <p>
+            A visual journey through our various missions and the communities we
+            serve around the world.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item animate-on-scroll">
+            <img
+              src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=600&auto=format&fit=crop&q=60"
+              alt="Education Mission"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-content">
+                <h4>Education Programs</h4>
+                <p>Empowering minds through learning</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item animate-on-scroll">
+            <img
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&auto=format&fit=crop&q=60"
+              alt="Healthcare Mission"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-content">
+                <h4>Healthcare Services</h4>
+                <p>Healing communities with care</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item animate-on-scroll">
+            <img
+              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&auto=format&fit=crop&q=60"
+              alt="Food Security"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-content">
+                <h4>Food Security</h4>
+                <p>Nourishing families and futures</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item animate-on-scroll">
+            <img
+              src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&auto=format&fit=crop&q=60"
+              alt="Community Development"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-content">
+                <h4>Community Building</h4>
+                <p>Strengthening social bonds</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item animate-on-scroll">
+            <img
+              src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&auto=format&fit=crop&q=60"
+              alt="Women Empowerment"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-content">
+                <h4>Women Empowerment</h4>
+                <p>Creating opportunities for all</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item animate-on-scroll">
+            <img
+              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&auto=format&fit=crop&q=60"
+              alt="Youth Programs"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-content">
+                <h4>Youth Development</h4>
+                <p>Investing in tomorrow's leaders</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Make a Difference?</h2>
+          <p>
+            Join us in our mission to create lasting change. Whether through
+            donations, volunteering, or spreading awareness, every action counts
+            towards building a better world.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="donate.html" class="btn-primary">Donate Now</a>
+            <a href="#" class="btn-secondary">Volunteer Today</a>
+            <a href="index.html" class="btn-secondary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Eco Yuva Foundation</h4>
+            <p>
+              Transforming communities through compassionate action and
+              sustainable development. Together, we build a world where everyone
+              has the opportunity to thrive.
+            </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Our Missions</h4>
+            <ul>
+              <li><a href="#">Education & Learning</a></li>
+              <li><a href="#">Healthcare & Wellness</a></li>
+              <li><a href="#">Food Security</a></li>
+              <li><a href="#">Community Development</a></li>
+              <li><a href="#">Women Empowerment</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Get Involved</h4>
+            <ul>
+              <li><a href="donate.html">Make a Donation</a></li>
+              <li><a href="#">Become a Volunteer</a></li>
+              <li><a href="#">Corporate Partnership</a></li>
+              <li><a href="#">Fundraise for Us</a></li>
+              <li><a href="#">Spread Awareness</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>
+              3, Near IT Park, GT Road<br />
+              Lahore 440000, Pakistan<br /><br />
+              Phone: +92 30059*59<br />
+              Email: missions@ecoyuva.com
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 Eco Yuva Foundation. All rights reserved. | Making a
+            difference, one mission at a time.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Animate elements on scroll
+      function animateOnScroll() {
+        const elements = document.querySelectorAll(".animate-on-scroll");
+        const windowHeight = window.innerHeight;
+
+        elements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+
+          if (elementTop < windowHeight - elementVisible) {
+            element.classList.add("animated");
+          }
+        });
+      }
+
+      // Initialize animations
+      window.addEventListener("scroll", animateOnScroll);
+      window.addEventListener("load", animateOnScroll);
+
+      // Counter animation for statistics
+      function animateCounters() {
+        const counters = document.querySelectorAll(
+          ".hero-stat h3, .pillar-stat .number, .volunteer-stat h3"
+        );
+
+        counters.forEach((counter) => {
+          const target = parseInt(counter.textContent.replace(/[^\d]/g, ""));
+          const increment = target / 100;
+          let current = 0;
+
+          const updateCounter = () => {
+            if (current < target) {
+              current += increment;
+              counter.textContent = Math.ceil(current).toLocaleString();
+              setTimeout(updateCounter, 20);
+            } else {
+              counter.textContent =
+                target.toLocaleString() +
+                (counter.textContent.includes("+") ? "+" : "") +
+                (counter.textContent.includes("%") ? "%" : "");
+            }
+          };
+
+          // Start animation when element is visible
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                updateCounter();
+                observer.unobserve(entry.target);
+              }
+            });
+          });
+
+          observer.observe(counter);
+        });
+      }
+
+      // Initialize counter animations
+      animateCounters();
+
+      // Parallax effect for hero section
+      window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector(".hero");
+        if (hero) {
+          hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+      });
+
+      // Interactive timeline items
+      document.querySelectorAll(".timeline-item").forEach((item) => {
+        item.addEventListener("mouseenter", function () {
+          this.style.transform = "scale(1.02)";
+        });
+
+        item.addEventListener("mouseleave", function () {
+          this.style.transform = "scale(1)";
+        });
+      });
+
+      // Gallery lightbox effect (simple version)
+      document.querySelectorAll(".gallery-item").forEach((item) => {
+        item.addEventListener("click", function () {
+          const img = this.querySelector("img");
+          const overlay = document.createElement("div");
+          overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                cursor: pointer;
+            `;
+
+          const enlargedImg = img.cloneNode();
+          enlargedImg.style.cssText = `
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+                border-radius: 12px;
+            `;
+
+          overlay.appendChild(enlargedImg);
+          document.body.appendChild(overlay);
+
+          overlay.addEventListener("click", () => {
+            document.body.removeChild(overlay);
+          });
+        });
+      });
+
+      // Dynamic content updates (simulate real-time data)
+      function updateStats() {
+        const stats = [
+          { selector: ".hero-stat:nth-child(1) h3", base: 25, variance: 2 },
+          {
+            selector: ".hero-stat:nth-child(2) h3",
+            base: 50000,
+            variance: 100,
+          },
+          { selector: ".hero-stat:nth-child(3) h3", base: 100, variance: 5 },
+        ];
+
+        stats.forEach((stat) => {
+          const element = document.querySelector(stat.selector);
+          if (element) {
+            const currentValue = parseInt(
+              element.textContent.replace(/[^\d]/g, "")
+            );
+            const newValue =
+              stat.base + Math.floor(Math.random() * stat.variance);
+            if (newValue !== currentValue) {
+              element.textContent =
+                newValue.toLocaleString() +
+                (element.textContent.includes("+") ? "+" : "");
+            }
+          }
+        });
+      }
+
+      // Update stats every 30 seconds
+      setInterval(updateStats, 30000);
+
+      // Add loading animation for images
+      document.querySelectorAll("img").forEach((img) => {
+        img.addEventListener("load", function () {
+          this.style.opacity = "1";
+        });
+
+        img.style.opacity = "0";
+        img.style.transition = "opacity 0.3s ease";
+      });
+
+      // Initialize page
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add entrance animations
+        setTimeout(() => {
+          document.body.classList.add("loaded");
+        }, 100);
+
+        // Trigger initial scroll animation
+        animateOnScroll();
+      });
+    </script>
+  </body>
+</html>
